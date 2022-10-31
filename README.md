@@ -1,4 +1,4 @@
-*Just pretty
+# Just pretty
 
 A proof of concept for a syntax view for just `EXPRESSION` files.
 The syntax can be transformed to and from the JSON representation.
@@ -13,5 +13,5 @@ determines the direction of conversion: use `e` for conversion to JSON from the
 view syntax and `d` for the opposite direction.
 
 
-[^1] Converted from  https://github.com/just-buildsystem/justbuild/blob/f875e1bcbe79ee8752612a5bfe9f1814f52f3ad1/rules/CC/EXPRESSIONS
-[^2] https://github.com/lark-parser/lark
+[^1]: Converted from  https://github.com/just-buildsystem/justbuild/blob/f875e1bcbe79ee8752612a5bfe9f1814f52f3ad1/rules/CC/EXPRESSIONS
+[^2]: https://github.com/lark-parser/lark
