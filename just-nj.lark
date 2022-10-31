@@ -1,0 +1,142 @@
+start_expr: expression_def*
+
+// Expression definitions -------------------------------------------------------
+
+
+expr_doc: EXPR_DOC_MAIN*  expr_doc_var*
+EXPR_DOC_MAIN: "# " /[^\n]+\n(# [^\n]*\n|#\n)*/
+expr_doc_var: "*v " name "-> " EXPR_DOC_V
+EXPR_DOC_V: /[^\n]+\n(\* [^\n]*\n|\*\n)*/
+
+exp_args: "(" (name ","?)* ")"
+
+using: name "=>" target
+using_block: "using" using* 
+
+expression_def: expr_doc "exp" name exp_args using_block? "=" expression
+
+// Expressions ------------------------------------------------------------------------
+
+expression: literal
+          | function
+          | singleton_map
+          | list
+          | for_each
+          | for_map
+          | let
+          | if_expr
+          | cond
+          | case
+          | case_star
+          | foldl
+          | var
+
+// Literals -------------------------------------------------------------------------
+
+?literal: EMPTY_MAP
+        | LITERAL_STRING
+        | BOOL
+        | NULL
+        | NUMBER
+
+EMPTY_MAP: "{" "}"
+LITERAL_STRING: "s\"" _STRING_ESC_INNER "\""
+BOOL: "true" | "false"
+NULL: "null"
+
+// Constructors -------------------------------------------------------------------------
+
+list: "[" (expression ("," expression)* )? "]"
+singleton_map: "{" expression ":" expression "}"
+target: ESCAPED_STRING -> local_target
+      | "[" ESCAPED_STRING ("," ESCAPED_STRING)+ "]" -> qualified_target
+
+// Variables -------------------------------------------------------------------------
+
+name: ESCAPED_STRING
+    | /[a-zA-Z0-9_-]+/
+
+var: name  -> plain_variable
+   | name "?=" expression -> variable_with_default
+
+// Functions -------------------------------------------------------------------------
+
+FUNCTION_NAME: "nub_right"
+             | "basename"
+             | "keys"
+             | "values"
+             | "range"
+             | "enumerate"
+             | "++"
+             | "map_union"
+             | "join_cmd"
+             | "json_encode"
+             | "and"
+             | "or"
+             | "change_ending"
+             | "join"
+             | "escape_chars"
+             | "to_subdir"
+             | "context"
+             | "assert_non_empty"
+             | "disjoint_map_union"
+             | "DEP_ARTIFACTS"
+             | "DEP_RUNFILES"
+             | "DEP_PROVIDES"
+             | "FIELD"
+             | "env"
+             | "fail"
+             | "CALL_EXPRESSION"
+             | "RESULT"
+             | "ACTION"
+             | "TREE"
+             | "BLOB"
+             | "lookup"
+
+keyword_arg: name "=" expression
+
+function: FUNCTION_NAME "(" (keyword_arg  ",")* (expression ("," expression)*) ")"
+        | FUNCTION_NAME "(" keyword_arg ("," keyword_arg)* ")"
+
+
+// Iterators ------------------------------------------------------------------------
+
+for_each: "for" name? ":" expression expression
+for_map: "for" for_map_bind "," for_map_bind ":" expression expression
+for_map_bind: name?
+
+foldl: "foldl" expression foldl_start "\\" for_map_bind "," for_map_bind ":" expression
+foldl_start: expression?
+
+// Bindings --------------------------------------------------------------------------
+
+let: "let*" (let_bind)* "in" expression
+let_bind: name "<-" expression
+
+// Conditionals -------------------------------------------------------------------
+
+cond_clauses: clause*
+clause: expression "->" expression
+optional_default: ("=>" expression) | "end"
+
+
+case: "case" expression cond_clauses optional_default
+    | "case" expression optional_default
+    | "case" optional_default
+
+case_star: "case*" expression cond_clauses optional_default
+         | "case*" expression optional_default
+         | "case*" optional_default
+
+if_expr: "if" expression "then" expression ("else" expression | "end")
+
+cond: "cond" cond_clauses optional_default
+
+
+// Imports ------------------------------------------------------------------------
+%ignore WS
+
+%import common.ESCAPED_STRING
+%import common._STRING_ESC_INNER
+%import common.WS
+%import common.SIGNED_NUMBER -> NUMBER

@@ -1,0 +1,189 @@
+exp "default-CC"()   
+  using "list_provider" => [ "./" , ".." , "field_list_provider" ] 
+   = join( let* "fieldname" <- s"defaults"
+                 "provider" <- s"CC" 
+            in 
+            CALL_EXPRESSION( "name" = s"list_provider" )
+         ) 
+
+exp "default-CXX" ()   
+  using "list_provider" => [ "./" , ".." , "field_list_provider" ] 
+  = join( let* "fieldname" <- s"defaults"
+                "provider" <- s"CXX" 
+           in 
+           CALL_EXPRESSION( "name" = s"list_provider" )
+        ) 
+
+exp "default-AR"()   
+  using "list_provider" => [ "./" , ".." , "field_list_provider" ] 
+  = join( let* "fieldname" <- s"defaults"
+               "provider" <- s"AR" 
+          in 
+          CALL_EXPRESSION( "name" = s"list_provider" )
+        ) 
+
+exp "default-CFLAGS"()   
+  using "list_provider" => [ "./" , ".." , "field_list_provider" ] 
+  = let* "fieldname" <- s"defaults"
+         "provider" <- s"CFLAGS" 
+    in 
+    CALL_EXPRESSION( "name" = s"list_provider" ) 
+
+exp "default-CXXFLAGS"()   
+  using "list_provider" => [ "./" , ".." , "field_list_provider" ] 
+  = let* "fieldname" <- s"defaults"
+         "provider" <- s"CXXFLAGS" 
+    in 
+    CALL_EXPRESSION( "name" = s"list_provider" ) 
+
+exp "default-ENV"()   
+  using "provider_list" => [ "./" , ".." , "field_provider_list" ] 
+  = let* "fieldname" <- s"defaults"
+         "provider" <- s"ENV"
+         "default" <- {} 
+    in 
+    CALL_EXPRESSION( "name" = s"provider_list" ) 
+
+# Query list-provider from 'base' targets (last wins)
+*v  "provider" -> The name of the list-provider in the provides map.
+exp "defaults-base-provides"("provider")   
+  using "provider_list" => [ "./" , ".." , "field_provider_list" ] 
+  = let* "fieldname" <- s"base" 
+    in 
+    foldl CALL_EXPRESSION( "name" = s"provider_list" ) \ "curr" , "next" :
+      if "next" then "next" else "curr" 
+
+# Collect compile dependencies (headers) from given target_fields
+*v  "deps-fieldnames" -> List of target_field names to collect dependencies from.
+*v  "transition" ->  The optional configuration transition for the targets.
+exp "compile-deps"("deps-fieldnames" "transition")   
+  using "runfiles_list" => [ "./" , ".." , "field_runfiles_list" ]
+        "provider_list" => [ "./" , ".." , "field_provider_list" ] 
+  = disjoint_map_union( ++ (for "fieldname" : "deps-fieldnames"
+                              ++ ( let* "provider" <- s"compile-deps"
+                                        "default" <- {} 
+                                   in 
+                                   [ CALL_EXPRESSION( "name" = s"provider_list" )
+                                   , CALL_EXPRESSION( "name" = s"runfiles_list" )])))
+
+# Collect link dependencies (libraries) from given target_fields
+*v  "deps-fieldnames" -> List of target_field names to collect dependencies from.
+*v  "transition" -> The optional configuration transition for the targets.
+exp "link-deps"("deps-fieldnames" "transition")   
+  using "artifacts_list" => [ "./" , ".." , "field_artifacts_list" ]
+        "provider_list" => [ "./" , ".." , "field_provider_list" ] 
+  = disjoint_map_union( ++ (for "fieldname" : "deps-fieldnames"
+                              ++ (let* "provider" <- s"link-deps"
+                                       "default" <- {} 
+                                  in 
+                                  [ CALL_EXPRESSION( "name" = s"provider_list" )
+                                  , CALL_EXPRESSION( "name" = s"artifacts_list" )])))
+
+# Collect linker arguments from given target_fields
+*v  "deps-fieldnames" ->  List of target_field names to collect arguments from.
+*v  "transition" -> The optional configuration transition for the targets.
+exp "link-args-deps"( "deps-fieldnames" "transition")   
+  using "list_provider" => [ "./" , ".." , "field_list_provider" ] 
+  = ++ (for "fieldname" : "deps-fieldnames"
+          let* "provider" <- s"link-args" 
+          in 
+          CALL_EXPRESSION( "name" = s"list_provider" ) ) 
+
+exp "objects"( "CXX" "CXXFLAGS" "ENV" "srcs" "compile-deps" "local hdrs") 
+  = let* "include tree" <- { s"include" : TREE("compile-deps") }
+         "all hdrs" <- map_union( [ "include tree"
+                                  , to_subdir( "subdir" = s"work" , "local hdrs")]) 
+    in 
+    map_union( for "src_name" , "src_val" : "srcs"
+      let* "work src_name" <- join( "separator" = s"/" , [ s"work" , "src_name" ] )
+           "inputs" <- map_union( [ "all hdrs" , { "work src_name" : "src_val" } ] )
+           "out" <- change_ending( "ending" = s".o" , "src_name" )
+           "work out" <- join( "separator" = s"/" , [ s"work" , "out" ] )
+           "action output" <- ACTION( "outs" = [ "work out" ]
+                                    , "inputs" = "inputs"
+                                    , "env" = "ENV" ?= {}
+                                    , "cmd" = ++( [ [ "CXX" ]
+                                                  , "CXXFLAGS"
+                                                  , [ s"-I" , s"work" , s"-isystem" , s"include" ]
+                                                  , [ s"-c" , "work src_name" ]
+                                                  , [ s"-o" , "work out" ]]))
+           "staged output artifact" <- map_union( for , "object" : "action output"
+                                                    { "out" : "object" } )
+      in 
+      "staged output artifact" ) 
+
+exp "compiler"( "CC" "CXX")   
+  using "default-CC" => "default-CC"
+        "default-CXX" => "default-CXX" 
+  = if FIELD( "name" = s"pure C" )
+    then "CC" ?= CALL_EXPRESSION( "name" = s"default-CC" )
+    else "CXX" ?= CALL_EXPRESSION( "name" = s"default-CXX" )
+
+exp "flags"( "CFLAGS" "CXXFLAGS" "ADD_CFLAGS" "ADD_CXXFLAGS")   
+  using "default-CFLAGS" => "default-CFLAGS"
+        "default-CXXFLAGS" => "default-CXXFLAGS" 
+  = if FIELD( "name" = s"pure C" )
+    then ++( [ "CFLAGS" ?= CALL_EXPRESSION( "name" = s"default-CFLAGS" )
+             , "ADD_CFLAGS" ?= [] ])
+    else ++( [ "CXXFLAGS" ?= CALL_EXPRESSION( "name" = s"default-CXXFLAGS" )
+             , "ADD_CXXFLAGS" ?= [] ]) 
+
+exp "lib artifact"( "CXX" "CXXFLAGS" "ADD_CXXFLAGS" "CC" "CFLAGS" "ADD_CFLAGS"
+                    "ENV" "AR" "srcs" "hdrs" "private-hdrs" "local cflags"
+                    "compile-deps")
+  using "compiler" => "compiler"
+        "flags" => "flags"
+        "objects" => "objects"
+        "default-AR" => "default-AR"
+        "default-ENV" => "default-ENV"
+  = let* "stage" <- join( "separator" = s"/" , FIELD( "name" = s"stage" ))
+         "CXX" <- CALL_EXPRESSION( "name" = s"compiler" )
+         "CXXFLAGS" <- CALL_EXPRESSION( "name" = s"flags" )
+         "AR" <- CALL_EXPRESSION( "name" = s"default-AR" )
+         "CXXFLAGS" <- ++( [ "CXXFLAGS"
+                           , "local cflags" ?= [] ])
+         "ENV" <- map_union( ++( [ CALL_EXPRESSION( "name" = s"default-ENV" )
+                                 , [ "ENV" ?= {} ]]))
+         "deps-fieldnames" <- [ s"deps" , s"proto-deps" ]
+         "local hdrs" <- disjoint_map_union( [ "hdrs" , "private-hdrs" ])
+         "objects" <- CALL_EXPRESSION( "name" = s"objects" )
+         "base name" <- let* "name" <- join( FIELD ("name" = s"name" ) )
+                        in 
+                        if "objects"
+                        then assert_non_empty( "msg" = s"A name has to be provided for non-header-only libraries"
+                                             , "name" )
+                        else "name"
+         "libname" <- join( [ s"lib" , "base name" , s".a" ])
+         "lib" <- if "objects"
+                  then ACTION ("outs" = [ "libname" ]
+                              , "inputs" = "objects"
+                              , "env" = "ENV" ?= {}
+                              , "cmd" = ++ ([ [ "AR" ?= s"ar"
+                                              , s"cqs"
+                                              , "libname" ]
+                                            , keys ( "objects" ) ]))
+                  else {}
+    in 
+    to_subdir ( "subdir" = "stage" , "lib" ) 
+
+exp "lib result"( "CXX" "CXXFLAGS" "ADD_CXXFLAGS" "CC" "CFLAGS" "ADD_CFLAGS"
+                  "ENV" "AR" "srcs" "hdrs" "private-hdrs" "local cflags"
+                  "link external" "extra-provides" )
+  using "compile-deps" => "compile-deps"
+        "link-deps" => "link-deps"
+        "link-args-deps" => "link-args-deps"
+        "lib artifact" => "lib artifact"
+  = let* "deps-fieldnames" <- [ s"deps" , s"proto-deps" ]
+         "compile-deps" <- CALL_EXPRESSION( "name" = s"compile-deps" )
+         "link-deps" <- CALL_EXPRESSION( "name" = s"link-deps" )
+         "lib" <- CALL_EXPRESSION( "name" = s"lib artifact" )
+         "link-args" <- nub_right( ++( [ keys( "lib" )
+                                       , "link external" ?= []
+                                       , CALL_EXPRESSION( "name" = s"link-args-deps" )]))
+    in 
+    RESULT( "artifacts" = "lib"
+          , "runfiles" = "hdrs"
+          , "provides" = map_union( [ env( "vars" = [ s"compile-deps"
+                                                    , s"link-deps"
+                                                    , s"link-args" ])
+                                    , "extra-provides" ?= {} ]))
