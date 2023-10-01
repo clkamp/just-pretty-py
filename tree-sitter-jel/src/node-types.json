@@ -1,0 +1,2727 @@
+[
+  {
+    "type": "bool",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "case_clause",
+    "named": true,
+    "fields": {
+      "clauses": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "clause",
+            "named": true
+          }
+        ]
+      },
+      "default": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "expr": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "case_star",
+    "named": true,
+    "fields": {
+      "clauses": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "clause",
+            "named": true
+          }
+        ]
+      },
+      "default": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "expr": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "clause",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "result": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "cond",
+    "named": true,
+    "fields": {
+      "clauses": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "clause",
+            "named": true
+          }
+        ]
+      },
+      "default": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "empty_map",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "exp_args",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "name",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expr_doc",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "expression_def",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "parameters": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "exp_args",
+            "named": true
+          }
+        ]
+      },
+      "usings": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "usings",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "expr_doc",
+          "named": true
+        },
+        {
+          "type": "var_doc",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "expression_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "expression_def",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "foldl",
+    "named": true,
+    "fields": {
+      "accum_var": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "iterator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "runtim_var": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "start": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "for_each",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "iterator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "runtime_var": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "for_map",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "iterator": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "runtime_key": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "runtime_var": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "func",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "++",
+            "named": false
+          },
+          {
+            "type": "ACTION",
+            "named": false
+          },
+          {
+            "type": "BLOB",
+            "named": false
+          },
+          {
+            "type": "CALL_EXPRESSION",
+            "named": false
+          },
+          {
+            "type": "DEP_ARTIFACTS",
+            "named": false
+          },
+          {
+            "type": "DEP_PROVIDES",
+            "named": false
+          },
+          {
+            "type": "DEP_RUNFILES",
+            "named": false
+          },
+          {
+            "type": "FIELD",
+            "named": false
+          },
+          {
+            "type": "RESULT",
+            "named": false
+          },
+          {
+            "type": "TREE",
+            "named": false
+          },
+          {
+            "type": "and",
+            "named": false
+          },
+          {
+            "type": "assert_non_empty",
+            "named": false
+          },
+          {
+            "type": "basename",
+            "named": false
+          },
+          {
+            "type": "change_ending",
+            "named": false
+          },
+          {
+            "type": "context",
+            "named": false
+          },
+          {
+            "type": "disjoint_map_union",
+            "named": false
+          },
+          {
+            "type": "enumerate",
+            "named": false
+          },
+          {
+            "type": "env",
+            "named": false
+          },
+          {
+            "type": "escape_chars",
+            "named": false
+          },
+          {
+            "type": "fail",
+            "named": false
+          },
+          {
+            "type": "join",
+            "named": false
+          },
+          {
+            "type": "join_cmd",
+            "named": false
+          },
+          {
+            "type": "json_encode",
+            "named": false
+          },
+          {
+            "type": "keys",
+            "named": false
+          },
+          {
+            "type": "lookup",
+            "named": false
+          },
+          {
+            "type": "map_union",
+            "named": false
+          },
+          {
+            "type": "nub_right",
+            "named": false
+          },
+          {
+            "type": "or",
+            "named": false
+          },
+          {
+            "type": "range",
+            "named": false
+          },
+          {
+            "type": "to_subdir",
+            "named": false
+          },
+          {
+            "type": "values",
+            "named": false
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "case_clause",
+          "named": true
+        },
+        {
+          "type": "case_star",
+          "named": true
+        },
+        {
+          "type": "cond",
+          "named": true
+        },
+        {
+          "type": "empty_map",
+          "named": true
+        },
+        {
+          "type": "foldl",
+          "named": true
+        },
+        {
+          "type": "for_each",
+          "named": true
+        },
+        {
+          "type": "for_map",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "keyword_arg",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "literal_string",
+          "named": true
+        },
+        {
+          "type": "nul",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "singleton_map",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "variable_binding",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "if_expr",
+    "named": true,
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "else": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "then": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "keyword_arg",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "let_bind",
+    "named": true,
+    "fields": {
+      "binding": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "list",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "bool",
+          "named": true
+        },
+        {
+          "type": "case_clause",
+          "named": true
+        },
+        {
+          "type": "case_star",
+          "named": true
+        },
+        {
+          "type": "cond",
+          "named": true
+        },
+        {
+          "type": "empty_map",
+          "named": true
+        },
+        {
+          "type": "foldl",
+          "named": true
+        },
+        {
+          "type": "for_each",
+          "named": true
+        },
+        {
+          "type": "for_map",
+          "named": true
+        },
+        {
+          "type": "func",
+          "named": true
+        },
+        {
+          "type": "if_expr",
+          "named": true
+        },
+        {
+          "type": "list",
+          "named": true
+        },
+        {
+          "type": "literal_string",
+          "named": true
+        },
+        {
+          "type": "nul",
+          "named": true
+        },
+        {
+          "type": "number",
+          "named": true
+        },
+        {
+          "type": "singleton_map",
+          "named": true
+        },
+        {
+          "type": "variable",
+          "named": true
+        },
+        {
+          "type": "variable_binding",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "literal_string",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "local_target",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "name",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "qualified_target",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "singleton_map",
+    "named": true,
+    "fields": {
+      "key": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "value": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "using",
+    "named": true,
+    "fields": {
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      },
+      "target": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "local_target",
+            "named": true
+          },
+          {
+            "type": "qualified_target",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "usings",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "using",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "var_doc",
+    "named": true,
+    "fields": {
+      "doc": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "var_doc_content",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "variable",
+    "named": true,
+    "fields": {
+      "default": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "name",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "variable_binding",
+    "named": true,
+    "fields": {
+      "binds": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "let_bind",
+            "named": true
+          }
+        ]
+      },
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "bool",
+            "named": true
+          },
+          {
+            "type": "case_clause",
+            "named": true
+          },
+          {
+            "type": "case_star",
+            "named": true
+          },
+          {
+            "type": "cond",
+            "named": true
+          },
+          {
+            "type": "empty_map",
+            "named": true
+          },
+          {
+            "type": "foldl",
+            "named": true
+          },
+          {
+            "type": "for_each",
+            "named": true
+          },
+          {
+            "type": "for_map",
+            "named": true
+          },
+          {
+            "type": "func",
+            "named": true
+          },
+          {
+            "type": "if_expr",
+            "named": true
+          },
+          {
+            "type": "list",
+            "named": true
+          },
+          {
+            "type": "literal_string",
+            "named": true
+          },
+          {
+            "type": "nul",
+            "named": true
+          },
+          {
+            "type": "number",
+            "named": true
+          },
+          {
+            "type": "singleton_map",
+            "named": true
+          },
+          {
+            "type": "variable",
+            "named": true
+          },
+          {
+            "type": "variable_binding",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "\"",
+    "named": false
+  },
+  {
+    "type": "# ",
+    "named": false
+  },
+  {
+    "type": "(",
+    "named": false
+  },
+  {
+    "type": ")",
+    "named": false
+  },
+  {
+    "type": "*v ",
+    "named": false
+  },
+  {
+    "type": "++",
+    "named": false
+  },
+  {
+    "type": ",",
+    "named": false
+  },
+  {
+    "type": "->",
+    "named": false
+  },
+  {
+    "type": "-> ",
+    "named": false
+  },
+  {
+    "type": ":",
+    "named": false
+  },
+  {
+    "type": "<-",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "=>",
+    "named": false
+  },
+  {
+    "type": "?=",
+    "named": false
+  },
+  {
+    "type": "ACTION",
+    "named": false
+  },
+  {
+    "type": "BLOB",
+    "named": false
+  },
+  {
+    "type": "CALL_EXPRESSION",
+    "named": false
+  },
+  {
+    "type": "DEP_ARTIFACTS",
+    "named": false
+  },
+  {
+    "type": "DEP_PROVIDES",
+    "named": false
+  },
+  {
+    "type": "DEP_RUNFILES",
+    "named": false
+  },
+  {
+    "type": "FIELD",
+    "named": false
+  },
+  {
+    "type": "RESULT",
+    "named": false
+  },
+  {
+    "type": "TREE",
+    "named": false
+  },
+  {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "\\",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "and",
+    "named": false
+  },
+  {
+    "type": "assert_non_empty",
+    "named": false
+  },
+  {
+    "type": "basename",
+    "named": false
+  },
+  {
+    "type": "case",
+    "named": false
+  },
+  {
+    "type": "case*",
+    "named": false
+  },
+  {
+    "type": "change_ending",
+    "named": false
+  },
+  {
+    "type": "cond",
+    "named": false
+  },
+  {
+    "type": "context",
+    "named": false
+  },
+  {
+    "type": "disjoint_map_union",
+    "named": false
+  },
+  {
+    "type": "else",
+    "named": false
+  },
+  {
+    "type": "end",
+    "named": false
+  },
+  {
+    "type": "enumerate",
+    "named": false
+  },
+  {
+    "type": "env",
+    "named": false
+  },
+  {
+    "type": "escape_chars",
+    "named": false
+  },
+  {
+    "type": "exp",
+    "named": false
+  },
+  {
+    "type": "fail",
+    "named": false
+  },
+  {
+    "type": "false",
+    "named": false
+  },
+  {
+    "type": "foldl",
+    "named": false
+  },
+  {
+    "type": "for",
+    "named": false
+  },
+  {
+    "type": "if",
+    "named": false
+  },
+  {
+    "type": "in",
+    "named": false
+  },
+  {
+    "type": "join",
+    "named": false
+  },
+  {
+    "type": "join_cmd",
+    "named": false
+  },
+  {
+    "type": "json_encode",
+    "named": false
+  },
+  {
+    "type": "keys",
+    "named": false
+  },
+  {
+    "type": "let*",
+    "named": false
+  },
+  {
+    "type": "lookup",
+    "named": false
+  },
+  {
+    "type": "map_union",
+    "named": false
+  },
+  {
+    "type": "nub_right",
+    "named": false
+  },
+  {
+    "type": "nul",
+    "named": true
+  },
+  {
+    "type": "number",
+    "named": true
+  },
+  {
+    "type": "or",
+    "named": false
+  },
+  {
+    "type": "range",
+    "named": false
+  },
+  {
+    "type": "s\"",
+    "named": false
+  },
+  {
+    "type": "then",
+    "named": false
+  },
+  {
+    "type": "to_subdir",
+    "named": false
+  },
+  {
+    "type": "true",
+    "named": false
+  },
+  {
+    "type": "using",
+    "named": false
+  },
+  {
+    "type": "values",
+    "named": false
+  },
+  {
+    "type": "var_doc_content",
+    "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
+    "named": false
+  }
+]
