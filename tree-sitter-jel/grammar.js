@@ -52,6 +52,7 @@ module.exports = grammar({
       $.singleton_map,
       $.variable,
       $.func,
+      $.dollar_func,
       $.for_each,
       $.for_map,
       $.foldl,
@@ -104,7 +105,7 @@ module.exports = grammar({
     variable: $=> seq(field('name', $.name), optional(seq("?=", field('default', $._expression)))),
 
     // Function
-    _function_name: $=> choice(
+    function_name: $=> choice(
       'nub_right',
       'basename',
       'keys',
@@ -140,10 +141,16 @@ module.exports = grammar({
 
     keyword_arg: $=> seq(field('name', $.name), '=', field('value', $._expression)),
     func: $=> seq(
-      field('name', $._function_name),
+      field('name', $.function_name),
       '(',
       commaSep(choice($.keyword_arg, $._expression)),
       ')'
+    ),
+
+    dollar_func: $=> seq(
+      field('name', $.function_name),
+      '$',
+      field('body', $._expression)
     ),
 
     // Iterators

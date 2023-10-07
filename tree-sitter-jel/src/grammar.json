@@ -229,6 +229,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "dollar_func"
+        },
+        {
+          "type": "SYMBOL",
           "name": "for_each"
         },
         {
@@ -517,7 +521,7 @@
         }
       ]
     },
-    "_function_name": {
+    "function_name": {
       "type": "CHOICE",
       "members": [
         {
@@ -679,7 +683,7 @@
           "name": "name",
           "content": {
             "type": "SYMBOL",
-            "name": "_function_name"
+            "name": "function_name"
           }
         },
         {
@@ -740,6 +744,31 @@
         {
           "type": "STRING",
           "value": ")"
+        }
+      ]
+    },
+    "dollar_func": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "function_name"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "$"
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_expression"
+          }
         }
       ]
     },
